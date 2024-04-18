@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="custom.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Clicktap Feedback</title>
+  </head>
+  <body>
+    <div class="flex flex-col items-center gap-10">
+      <div class="flex justify-center">
+        <img src="/images/logo.png" alt="logo" class="max-w-[200px]
+        sm:max-w-[300px] w-full"
+      </div>
+    </div>
+
+    <form
+      id="feedbackForm"
+      class="max-w-[90%] sm:max-w-[1100px] rounded-[31px] w-full border-2 border-black"
+    >
+      <div
+        class="bg-black text-white text-xl sm:text-3xl text-center font-[500] rounded-[29px] py-6"
+      >
+        <h1>FEEDBACK FORM</h1>
+      </div>
+
+      <div
+        class="py-4 px-4 sm:px-12 flex flex-wrap sm:flex-nowrap justify-between sm:gap-20"
+      >
+        <div class="w-full">
+          <label for="name" class="block mb-2 font-medium">Your Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="w-full border-[1px] bg-[#F8FAFC] border-black rounded-[4px] px-4 py-2 mb-4"
+            placeholder="Enter your name"
+          />
+          <span id="nameError" class="text-red-500 hidden"
+            >Please enter your name</span
+          >
+        </div>
+
+        <div class="w-full">
+          <label for="email" class="block mb-2 font-medium">Your Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="w-full border-[1px] bg-[#F8FAFC] border-black rounded-[4px] px-4 py-2"
+            placeholder="Enter your email"
+          />
+          <span id="emailError" class="text-red-500 hidden"
+            >Please enter a valid email</span
+          >
+        </div>
+      </div>
+      <hr class="h-[2px] bg-black w-full" />
+
+      <div
+        class="py-4 sm:py-10 px-4 sm:px-12 flex flex-col flex-wrap sm:flex-nowrap justify-between gap-8 sm:gap-14"
+      >
+        <div class="w-full flex flex-col gap-8">
+          <h2 class="fontH2">
+            How satisfied are you with the responsiveness of our agency to your
+            inquiries and requests?
+          </h2>
+          <div
+            class="radio-list grid grid-cols-1 md:grid-cols-5 place-items-start gap-5 w-full"
+          >
+            <div class="radio-item">
+              <input
+                name="satisfied"
+                id="radio1"
+                value="excellent"
+                type="radio"
+              /><label for="radio1">Excellent</label>
+            </div>
+            <div class="radio-item">
+              <input
+                name="satisfied"
+                id="radio2"
+                value="Very Good"
+                type="radio"
+              /><label for="radio2">Very Good</label>
+            </div>
+            <div class="radio-item">
+              <input
+                name="satisfied"
+                id="radio3"
+                value="Good"
+                type="radio"
+              /><label for="radio3">Good</label>
+            </div>
+            <div class="radio-item">
+              <input
+                name="satisfied"
+                id="radio4"
+                value="Average"
+                type="radio"
+              /><label for="radio4">Average</label>
+            </div>
+            <div class="radio-item">
+              <input
+                name="satisfied"
+                id="radio5"
+                value="Poor"
+                type="radio"
+              /><label for="radio5">Poor</label>
+            </div>
+          </div>
+          <span id="satisfiedError" class="text-red-500 hidden"
+            >Please select an option</span
+          >
+        </div>
+
+        <div class="w-full flex flex-col gap-8">
+          <h2 class="fontH2">
+            how would you rate the quality of work delivered by our agency?
+          </h2>
+          <div
+            class="radio-list grid grid-cols-1 md:grid-cols-5 place-items-start gap-5 w-full"
+          >
+            <div class="radio-item">
+              <input
+                name="quality"
+                id="quality1"
+                value="excellent"
+                type="radio"
+              /><label for="quality1">Excellent</label>
+            </div>
+            <div class="radio-item">
+              <input
+                name="quality"
+                id="quality2"
+                value="Very Good"
+                type="radio"
+              /><label for="quality2">Very Good</label>
+            </div>
+            <div class="radio-item">
+              <input
+                name="quality"
+                id="quality3"
+                value="Good"
+                type="radio"
+              /><label for="quality3">Good</label>
+            </div>
+            <div class="radio-item">
+              <input
+                name="quality"
+                id="quality4"
+                value="Average"
+                type="radio"
+              /><label for="quality4">Average</label>
+            </div>
+            <div class="radio-item">
+              <input
+                name="quality"
+                id="quality5"
+                value="Poor"
+                type="radio"
+              /><label for="quality5">Poor</label>
+            </div>
+          </div>
+          <span id="qualityError" class="text-red-500 hidden"
+            >Please select an option</span
+          >
+        </div>
+
+        <div class="w-full flex flex-col gap-8">
+          <h2 class="fontH2">
+            Did our agency meet your expectations in terms of project deadlines
+            and milestones?
+          </h2>
+          <div
+            class="radio-list grid grid-cols-1 md:grid-cols-5 place-items-start gap-5 w-full"
+          >
+            <div class="radio-item">
+              <input
+                name="expectations"
+                id="expectations1"
+                value="excellent"
+                type="radio"
+              /><label for="expectations1">Excellent</label>
+            </div>
+            <div class="radio-item">
+              <input
+                name="expectations"
+                id="expectations2"
+                value="Very Good"
+                type="radio"
+              /><label for="expectations2">Very Good</label>
+            </div>
+            <div class="radio-item">
+              <input
+                name="expectations"
+                id="expectations3"
+                value="Good"
+                type="radio"
+              /><label for="expectations3">Good</label>
+            </div>
+            <div class="radio-item">
+              <input
+                name="expectations"
+                id="expectations4"
+                value="Average"
+                type="radio"
+              /><label for="expectations4">Average</label>
+            </div>
+            <div class="radio-item">
+              <input
+                name="expectations"
+                id="expectations5"
+                value="Poor"
+                type="radio"
+              /><label for="expectations5">Poor</label>
+            </div>
+          </div>
+          <span id="expectationsError" class="text-red-500 hidden"
+            >Please select an option</span
+          >
+        </div>
+        <div class="w-full flex flex-col gap-8">
+          <h2 class="fontH2">
+            How would you rate the professionalism and expertise of our agency?
+          </h2>
+          <div
+            class="radio-list grid grid-cols-1 md:grid-cols-5 place-items-start gap-5 w-full"
+          >
+            <div class="radio-item">
+              <input
+                name="professionalism"
+                id="professionalism1"
+                value="excellent"
+                type="radio"
+              /><label for="professionalism1">Excellent</label>
+            </div>
+            <div class="radio-item">
+              <input
+                name="professionalism"
+                id="professionalism2"
+                value="Very Good"
+                type="radio"
+              /><label for="professionalism2">Very Good</label>
+            </div>
+            <div class="radio-item">
+              <input
+                name="professionalism"
+                id="professionalism3"
+                value="Good"
+                type="radio"
+              /><label for="professionalism3">Good</label>
+            </div>
+            <div class="radio-item">
+              <input
+                name="professionalism"
+                id="professionalism4"
+                value="Average"
+                type="radio"
+              /><label for="professionalism4">Average</label>
+            </div>
+            <div class="radio-item">
+              <input
+                name="professionalism"
+                id="professionalism5"
+                value="Poor"
+                type="radio"
+              /><label for="professionalism5">Poor</label>
+            </div>
+          </div>
+          <span id="professionalismError" class="text-red-500 hidden"
+            >Please select an option</span
+          >
+        </div>
+        <div class="w-full flex flex-col gap-8">
+          <h2 class="fontH2">
+            Your level of satisfaction with the results achieved thus far with
+            our Company?
+          </h2>
+          <div
+            class="radio-list grid grid-cols-1 md:grid-cols-5 place-items-start gap-5 w-full"
+          >
+            <div class="radio-item">
+              <input
+                name="results"
+                id="results1"
+                value="excellent"
+                type="radio"
+              /><label for="results1">Excellent</label>
+            </div>
+            <div class="radio-item">
+              <input
+                name="results"
+                id="results2"
+                value="Very Good"
+                type="radio"
+              /><label for="results2">Very Good</label>
+            </div>
+            <div class="radio-item">
+              <input
+                name="results"
+                id="results3"
+                value="Good"
+                type="radio"
+              /><label for="results3">Good</label>
+            </div>
+            <div class="radio-item">
+              <input
+                name="results"
+                id="results4"
+                value="Average"
+                type="radio"
+              /><label for="results4">Average</label>
+            </div>
+            <div class="radio-item">
+              <input
+                name="results"
+                id="results5"
+                value="Poor"
+                type="radio"
+              /><label for="results5">Poor</label>
+            </div>
+          </div>
+          <span id="resultsError" class="text-red-500 hidden"
+            >Please select an option</span
+          >
+        </div>
+
+        <div class="w-full flex flex-col gap-8">
+          <label for="improvementSuggestions" class="block mb-2 font-medium">
+            <h2 class="fontH2">
+              Considering your overall experience with our agency, what
+              suggestions do you have for areas of improvement?
+            </h2></label
+          >
+          <textarea
+            id="improvementSuggestions"
+            name="improvementSuggestions"
+            class="w-full border-[1px] bg-[#F8FAFC] border-black rounded-[4px] px-4 py-2"
+            rows="4"
+            placeholder="Write your breif Here (Optional)"
+            style="resize: vertical"
+          ></textarea>
+        </div>
+
+        <div class="w-full flex flex-col gap-8">
+          <label for="improvementSuggestions" class="block mb-2 font-medium">
+            <h2 class="fontH2">
+              Considering your overall experience with our agency, what
+              suggestions do you have for areas of improvement?
+            </h2></label
+          >
+          <textarea
+            id="improvementSuggestions"
+            name="improvementSuggestions"
+            class="w-full border-[1px] bg-[#F8FAFC] border-black rounded-[4px] px-4 py-2"
+            rows="4"
+            placeholder="Write your breif Here (Optional)"
+            style="resize: vertical"
+          ></textarea>
+        </div>
+      </div>
+
+      <div class="w-full flex flex-col gap-8">
+        <div
+          class="py-4 px-4 sm:px-12 flex flex-wrap flex-col sm:flex-nowrap sm:gap-10 checkbox-list"
+        >
+          <h2 class="fontH2">
+            Would you like a reprensentative to contact you?
+          </h2>
+          <div class="flex justify-start gap-5">
+            <div class="radio">
+              <input id="contact1" name="contact" type="radio" value="Yes" />
+              <label for="contact1" class="radio-label">Yes</label>
+            </div>
+
+            <div class="radio">
+              <input id="contact2" name="contact" type="radio" value="No" />
+              <label for="contact2" class="radio-label">No</label>
+            </div>
+          </div>
+          <div class="flex mt-10 sm:mt-0 justify-end">
+            <button
+              type="submit"
+              class="bg-black text-white px-8 py-3 rounded-[4px]"
+            >
+              Submit response
+            </button>
+          </div>
+        </div>
+              
+      </div>
+    </form>
+  </body>
+
+  <script>
+    const form = document.getElementById("feedbackForm");
+
+    form.addEventListener("submit", handleSubmit);
+
+    function handleSubmit(event) {
+      event.preventDefault();
+      const formData = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        satisfied: document.querySelector('input[name="satisfied"]:checked')
+          ? document.querySelector('input[name="satisfied"]:checked').value
+          : null,
+        quality: document.querySelector('input[name="quality"]:checked')
+          ? document.querySelector('input[name="quality"]:checked').value
+          : null,
+        expectations: document.querySelector(
+          'input[name="expectations"]:checked'
+        )
+          ? document.querySelector('input[name="expectations"]:checked').value
+          : null,
+        professionalism: document.querySelector(
+          'input[name="professionalism"]:checked'
+        )
+          ? document.querySelector('input[name="professionalism"]:checked')
+              .value
+          : null,
+        results: document.querySelector('input[name="results"]:checked')
+          ? document.querySelector('input[name="results"]:checked').value
+          : null,
+        improvementSuggestions: document.getElementById(
+          "improvementSuggestions"
+        ).value,
+        contact: document.getElementById("contact2").value,
+      };
+
+      const errors = {};
+
+      if (!formData.name) {
+        errors.name = true;
+        document.getElementById("nameError").classList.remove("hidden");
+      } else {
+        errors.name = false;
+        document.getElementById("nameError").classList.add("hidden");
+      }
+
+      if (!formData.email || !validateEmail(formData.email)) {
+        errors.email = true;
+        document.getElementById("emailError").classList.remove("hidden");
+      } else {
+        errors.email = false;
+        document.getElementById("emailError").classList.add("hidden");
+      }
+
+      if (!formData.satisfied) {
+        errors.satisfied = true;
+        document.getElementById("satisfiedError").classList.remove("hidden");
+      } else {
+        errors.satisfied = false;
+        document.getElementById("satisfiedError").classList.add("hidden");
+      }
+      if (!formData.quality) {
+        errors.quality = true;
+        document.getElementById("qualityError").classList.remove("hidden");
+      } else {
+        errors.quality = false;
+        document.getElementById("qualityError").classList.add("hidden");
+      }
+      if (!formData.expectations) {
+        errors.expectations = true;
+        document.getElementById("expectationsError").classList.remove("hidden");
+      } else {
+        errors.expectations = false;
+        document.getElementById("expectationsError").classList.add("hidden");
+      }
+      if (!formData.professionalism) {
+        errors.professionalism = true;
+        document
+          .getElementById("professionalismError")
+          .classList.remove("hidden");
+      } else {
+        errors.professionalism = false;
+        document.getElementById("professionalismError").classList.add("hidden");
+      }
+      if (!formData.results) {
+        errors.results = true;
+        document.getElementById("resultsError").classList.remove("hidden");
+      } else {
+        errors.results = false;
+        document.getElementById("resultsError").classList.add("hidden");
+      }
+
+      if (Object.values(errors).some((error) => error === true)) {
+        return;
+      }
+
+      console.log("Form Data:", formData);
+      form.reset();
+    }
+
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+  </script>
+  >
+</html>
