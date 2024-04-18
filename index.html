@@ -19,7 +19,7 @@
 
     <title>Clicktap Feedback</title>
   </head>
-  <body>
+  <body class="bg-gray-100">
     <div class="flex flex-col items-center gap-10">
       <div class="flex justify-center">
         <img src="/images/logo.png" alt="logo" class="max-w-[200px]
@@ -28,8 +28,9 @@
     </div>
 
     <form
+      action="./assets/contact_form.php"
       id="feedbackForm"
-      class="max-w-[90%] sm:max-w-[1100px] rounded-[31px] w-full border-2 border-black border-b-none"
+      class="max-w-[90%] bg-white sm:max-w-[1100px] rounded-[31px] w-full border-2 border-black border-b-none"
     >
       <div
         class="bg-black text-white text-xl sm:text-3xl text-center font-[500] rounded-[29px] py-6"
@@ -339,8 +340,6 @@
           >
         </div>
 
-         
-
         <div class="w-full flex flex-col gap-8">
           <label for="improvementSuggestions" class="block mb-2 font-medium">
             <h2 class="fontH2">
@@ -494,6 +493,31 @@
     function validateEmail(email) {
       const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return re.test(email);
+    }
+
+    form.addEventListener("submit", handleSubmit);
+
+    function handleSubmit(event) {
+      event.preventDefault();
+      const formData = new FormData(form);
+
+      fetch("./assets/contact_form.php", {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log("Success:", data);
+          form.reset();
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
     }
   </script>
   >
