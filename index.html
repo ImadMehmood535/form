@@ -28,18 +28,19 @@
     </div>
 
     <form
-      action="./assets/contact_form.php"
+      action="./assets/form/contact_form.php"
+      method="post"
       id="feedbackForm"
       class="max-w-[90%] bg-white sm:max-w-[1100px] rounded-[31px] w-full border-2 border-black border-b-none"
     >
       <div
-        class="bg-black text-white text-xl sm:text-3xl text-center font-[500] rounded-[29px] py-6"
+        class="bg-black text-white text-xl sm:text-3xl text-center font-[500] rounded-t-[29px] py-6"
       >
         <h1>FEEDBACK FORM</h1>
       </div>
 
       <div
-        class="py-4 px-4 sm:px-12 flex flex-wrap sm:flex-nowrap justify-between sm:gap-20"
+        class="py-12 px-4 sm:px-12 flex flex-wrap sm:flex-nowrap justify-between sm:gap-20"
       >
         <div class="w-full">
           <label for="name" class="block mb-2 font-medium">Your Name:</label>
@@ -493,31 +494,6 @@
     function validateEmail(email) {
       const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return re.test(email);
-    }
-
-    form.addEventListener("submit", handleSubmit);
-
-    function handleSubmit(event) {
-      event.preventDefault();
-      const formData = new FormData(form);
-
-      fetch("./assets/contact_form.php", {
-        method: "POST",
-        body: formData,
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-          return response.json();
-        })
-        .then((data) => {
-          console.log("Success:", data);
-          form.reset();
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-        });
     }
   </script>
   >
